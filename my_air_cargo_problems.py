@@ -159,9 +159,10 @@ class AirCargoProblem(Problem):
         # Get the current state
         old_state = decode_state(state, self.state_map)
 
+
         for fluent in old_state.pos:
-            if fluent not in action.effect_rem:
-                new_state.pos.append(fluent)
+            if fluent not in action.effect_add:
+                new_state.pos.append(fluent)         
         for fluent in old_state.neg:
             if fluent not in action.effect_add:
                 new_state.neg.append(fluent)
