@@ -161,7 +161,7 @@ class AirCargoProblem(Problem):
 
 
         for fluent in old_state.pos:
-            if fluent not in action.effect_add:
+            if fluent not in action.effect_rem:
                 new_state.pos.append(fluent)         
         for fluent in old_state.neg:
             if fluent not in action.effect_add:
